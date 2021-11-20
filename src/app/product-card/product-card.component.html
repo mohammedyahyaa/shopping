@@ -1,0 +1,10 @@
+<div class="card" *ngIf="product.payload.val().title" style="width: 18rem">
+    <img width="200" height="150" class="card-img-top" *ngIf="product.payload.val().imageUrl" [src]="product.payload.val().imageUrl" />
+    <div class="card-body">
+        <h5 class="card-title">{{ product.payload.val().title }}</h5>
+        <h5 class="card-title">{{ product.payload.val().category }}</h5>
+        <p class="card-text">
+            {{ product.payload.val().price | currency: "USD":true }}
+        </p>
+    </div>
+</div>
