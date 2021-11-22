@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
 import { DataTablesModule } from "angular-datatables";
 import { ProductCardComponent } from './product-card/product-card.component';
+import { ProductFilterComponent } from './product-filter/product-filter.component';
 
 
 
@@ -48,7 +49,8 @@ import { ProductCardComponent } from './product-card/product-card.component';
     OrderSuccessComponent,
     AdminManageUsersComponent,
     ProductFormComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductFilterComponent
   ],
   imports: [
     AngularFireDatabaseModule,
