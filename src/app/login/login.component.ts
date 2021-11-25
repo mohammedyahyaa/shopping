@@ -15,11 +15,5 @@ export class LoginComponent {
 
   }
 
-  login() {
-
-
-    this.service.login();
-
-  }
 
 }

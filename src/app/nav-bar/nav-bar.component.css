@@ -2,6 +2,10 @@
     cursor: pointer;
 }
 
+.nav-link {
+    cursor: pointer;
+}
+
 button {
     cursor: pointer;
 }
@@ -22,4 +26,8 @@ body {
     border: 1px solid transparent;
     border-radius: 0.25rem;
     transition: box-shadow .15s ease-in-out;
+}
+
+.badge {
+    color: black;
 }

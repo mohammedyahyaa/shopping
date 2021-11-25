@@ -1,9 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { CategoriesService } from '../services/categories.service';
 import { ProductsService } from '../services/products.service';
 import { switchMap } from 'rxjs/operators';
+import { ShoppingCardService } from '../services/shopping-card.service';
+import { ShoppingCardComponent } from '../shopping-card/shopping-card.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,9 +16,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   products: any[] = [];
   filterdProducts: any[] = [];
   category: any = '';
+  cart: any;
   subscribtion: Subscription;
 
-  constructor(private route: ActivatedRoute, private productServ: ProductsService, private categoriesServ: CategoriesService) {
+  constructor(private cartServ: ShoppingCardService, private route: ActivatedRoute, private productServ: ProductsService, private categoriesServ: CategoriesService) {
 
     this.subscribtion =
       this.productServ.getAll().pipe(switchMap(products => {
@@ -35,9 +38,13 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.subscribtion.unsubscribe();
   }
 
-  ngOnInit() {
+  async ngOnInit(): Promise<void> {
+    (await this.cartServ.getCart()).valueChanges().subscribe(cart => {
+      this.cart = cart;
 
-
+    })
   }
+
+
 
 }

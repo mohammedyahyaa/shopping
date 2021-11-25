@@ -7,12 +7,21 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" routerLink="shopping-card">Shopping Card </a>
+                <a class="nav-link" routerLink="shopping-card">Shopping Cart
+
+          <span
+            *ngIf="shoppingCartCounter != 0"
+            style="background-color: yellow"
+            class="badge badge-warning"
+          >
+            {{ shoppingCartCounter }}
+          </span>
+        </a>
             </li>
 
             <ng-template #anonymousUser>
                 <div>
-                    <a class="nav-link" routerLink="/login"> login</a>
+                    <a class="nav-link" (click)="login()"> login</a>
                 </div>
             </ng-template>
 
