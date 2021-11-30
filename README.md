@@ -29,3 +29,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 =======
 # shopping
 >>>>>>> 52dac6d1038a1f7bea2d9988f62dfd027a355096
+
+
+https://user-images.githubusercontent.com/49885862/144055233-56fcfbdd-8359-4afa-b089-e6410b499928.mp4
+
